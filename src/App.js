@@ -4,12 +4,13 @@ import Login from "./Login";
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
 import './App.css';
+import icon from "./Icon.png";
 
 const App = () => (
   <Router>
     <div>
       <hr />
-      <Route exact path="/access" component={Login} />
+      <Route exact path="/" component={Login} />
       <Route path="/code" component={About} />
       <Route path="/medications" component={Medications} />
       <Route path="/success" component={Success} />
@@ -24,10 +25,11 @@ const Home = () => (
 );
 
 const About = () => (
-  <div>
+  <div className="Validation">
   <form action="/medications">
-    <FormGroup controlId="password" bsSize="large">
-            <ControlLabel>Prescription Validation Code</ControlLabel>
+  <img id="validation-icon" src={icon}></img>
+    <FormGroup id="validation-group" controlId="code" bsSize="large">
+            <ControlLabel id="validation-text"> Prescription Validation Code: </ControlLabel>
             <FormControl
               type="text"
             />
@@ -35,6 +37,7 @@ const About = () => (
           
           <Button
             block
+            id="validate-button"
             bsSize="large"
             type="submit"
           >
@@ -59,7 +62,7 @@ function Medications (match) {
 		console.log("Dispensed");
 	}
   return <div className="medList">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Hussam_Awak.png/200px-Hussam_Awak.png"></img>
+  <img src={icon}></img>
     <h2>Medications</h2>
 		<table>
 		<tr>
@@ -110,7 +113,8 @@ const Topic = ({ match }) => (
 
 const Success = ({ match }) => (
   <div>
-    <h3>Medication dispensed from receipt.</h3>
+  <img id="success-icon" src={icon}></img>
+    <h2>Medication dispensed from receipt.</h2>
   </div>
 );
 

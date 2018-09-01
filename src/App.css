@@ -21,6 +21,11 @@
   font-size: 1.5em;
 }
 
+.Validation {
+  margin: auto;
+  width: 30%;
+}
+
 .App-intro {
   font-size: large;
 }
@@ -28,7 +33,22 @@
 .Login-form {
 }
 
+#success-icon {
+	margin: auto;
+	margin-left:100px;
+	width:10%;
+}
 
+#validation-group {
+}
+#validate-button {
+	margin-top:20px;
+	width:50%;
+}
+
+#validation-icon {
+	margin: 0px;
+}
 
 .medList {
 	margin: auto;
