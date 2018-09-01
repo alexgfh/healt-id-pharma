@@ -1,11 +1,12 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Login from "./Login";
 
 const App = () => (
   <Router>
     <div>
       <hr />
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={Login} />
       <Route path="/about" component={About} />
       <Route path="/medications" component={Medications} />
     </div>
