@@ -9,6 +9,7 @@ const App = () => (
       <Route exact path="/access/*" component={Login} />
       <Route path="/about" component={About} />
       <Route path="/medications" component={Medications} />
+      <Route path="/success" component={Success} />
     </div>
   </Router>
 );
@@ -27,6 +28,12 @@ const About = () => (
 
 function Dispense() {
 	console.log("Dispensed");
+}
+
+const ButtonLink = () => {
+  return (
+      <a href="/success"><button>Dispense</button></a>
+  )
 }
 
 function Medications (match) {
@@ -57,7 +64,7 @@ function Medications (match) {
 		</select></td></tr>
         
         <tr>
-        <td><button onClick={Dispense}>Dispense</button></td>
+        <td><ButtonLink>Dispense</ButtonLink></td>
         </tr>
         </table>
 
@@ -73,6 +80,12 @@ function Medications (match) {
 const Topic = ({ match }) => (
   <div>
     <h3>{match.params.topicId}</h3>
+  </div>
+);
+
+const Success = ({ match }) => (
+  <div>
+    <h3>Medication dispensed from receipt.</h3>
   </div>
 );
 
