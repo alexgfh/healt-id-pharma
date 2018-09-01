@@ -1,4 +1,7 @@
 .App {
+	display:flex;
+	flex:1;
+	align-items:center;
 }
 
 .App-logo {
@@ -28,7 +31,8 @@
 
 
 .medList {
-	padding: 620px;
+	margin: auto;
+	width: 50%;
 }
 
 @keyframes App-logo-spin {

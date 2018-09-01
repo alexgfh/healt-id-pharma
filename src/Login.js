@@ -28,7 +28,11 @@ export default class Login extends Component {
   render() {
     return (
       <div className="Login">
-        <form action="/medications">
+      <h1 className="Title" style={{display: 'inline', padding: 0, textAlign: 'center', backgroundColor: 'blue',display: "flex",
+  justifyContent: "center",
+  alignItems: "center"}}>
+  Health ID 2.0</h1>
+        <form action="/code">
           <FormGroup controlId="email" bsSize="large">
             <ControlLabel>Email</ControlLabel>
             <FormControl
@@ -46,6 +50,7 @@ export default class Login extends Component {
               type="password"
             />
           </FormGroup>
+          
           <Button
             block
             bsSize="large"

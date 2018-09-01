@@ -1,13 +1,16 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Login from "./Login";
+import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
+import "./Login.css";
+import './App.css';
 
 const App = () => (
   <Router>
     <div>
       <hr />
-      <Route exact path="/access/*" component={Login} />
-      <Route path="/about" component={About} />
+      <Route exact path="/access" component={Login} />
+      <Route path="/code" component={About} />
       <Route path="/medications" component={Medications} />
       <Route path="/success" component={Success} />
     </div>
@@ -22,7 +25,22 @@ const Home = () => (
 
 const About = () => (
   <div>
-    <h2>About</h2>
+  <form action="/medications">
+    <FormGroup controlId="password" bsSize="large">
+            <ControlLabel>Prescription Validation Code</ControlLabel>
+            <FormControl
+              type="text"
+            />
+          </FormGroup>
+          
+          <Button
+            block
+            bsSize="large"
+            type="submit"
+          >
+            Validate
+          </Button>
+        </form>
   </div>
 );
 
@@ -41,8 +59,15 @@ function Medications (match) {
 		console.log("Dispensed");
 	}
   return <div className="medList">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Hussam_Awak.png/200px-Hussam_Awak.png"></img>
     <h2>Medications</h2>
 		<table>
+		<tr>
+        <td>Name:</td><td> Maria Teresa</td>
+        </tr>
+        <tr>
+        <td>ID:</td> <td>13705893405</td>
+        </tr>
         <tr>
         <td className="medName">Ibuprofen</td>
         
